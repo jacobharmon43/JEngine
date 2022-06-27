@@ -32,7 +32,3 @@
 *.app
 
 .vscode/**
-include/ParkSim/*
-src/ParkSim/*
-include/ParkSim.h
-src/ParkSim.cpp
