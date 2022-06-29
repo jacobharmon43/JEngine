@@ -61,6 +61,11 @@ void Object::MoveBy(Vector2 move)
 //* Object capabilities *//
 void Object::Render(SDL_Renderer* r)
 {
+    SDL_SetRenderDrawColor(r, m_renderColor.r, m_renderColor.g, m_renderColor.b, m_renderColor.a);
+    if (m_texture == nullptr){
+        SDL_RenderDrawRect(r, &(SDL_Rect)m_renderPosition);
+        return;
+    }
     SDL_SetTextureColorMod(m_texture, m_renderColor.r, m_renderColor.g, m_renderColor.b);
     SDL_SetTextureAlphaMod(m_texture, m_renderColor.a);
     SDL_FRect rect = m_renderPosition;

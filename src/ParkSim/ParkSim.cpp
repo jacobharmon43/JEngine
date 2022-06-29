@@ -1,8 +1,7 @@
 #include "ParkSim.h"
+#include <algorithm>
 
 float globalTicks;
-int width;
-int height;
 
 list<Object*> allObjects;
 
@@ -28,8 +27,6 @@ ParkSimulator::~ParkSimulator(){
 void ParkSimulator::Init(const char* name)
 {
     Game::Init(name);
-    width = m_width;
-    height = m_height;
     SDL_Surface* im = IMG_Load("res/Cat.png");
     if(im == NULL) printf("Unable to load: %s", IMG_GetError());
     SDL_Texture* t = SDL_CreateTextureFromSurface(gRenderer, im);
